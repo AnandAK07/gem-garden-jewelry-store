@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.nunito-300-light{
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300;
+}
+
+.nunito-400-regular{
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+}
+
+.oswald-500-medium{
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+}
+
+.m-0{
+  margin: 0px;
+}

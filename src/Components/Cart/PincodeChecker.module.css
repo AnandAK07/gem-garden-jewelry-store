@@ -1,0 +1,14 @@
+.pincode-checker-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.p-10 {
+    padding: 10px;
+}
+
+h4{
+    margin: 0px;
+}
