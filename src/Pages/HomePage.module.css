@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&family=Oswald&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sectionP1 {
+    padding: 0 140px;
+
+}
+
+#collection {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.sectionM1 {
+    margin: 100px 0;
+}
+
+#collection>.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: start;
+}
+
+#collection>.heading>div:nth-child(1) h1 {
+    font-size: 30px;
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif;
+    color: rgba(0, 0, 0, 0.93);
+    margin-bottom: 10px;
+}
+
+#collection>.heading>div:nth-child(1) span {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+#collection>.heading>div:nth-child(2) p {
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+#collection .productContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 60px;
+}
+
+#collection .card {
+    display: flex;
+    width: 24.5%;
+    flex-direction: column;
+    text-align: start;
+}
+
+#collection .cardImg {
+    width: 100%;
+    height: 296px;
+    background-color: rgb(249, 248, 246);
+}
+
+#collection .cardTitle {
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.92);
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+#collection .cardDesc {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.822);
+}
