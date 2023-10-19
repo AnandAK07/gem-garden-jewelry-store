@@ -1,10 +1,6 @@
 import React from "react";
-import {
-  LOGIN_FAILURE,
-  LOGIN_REQUEST,
-  LOGIN_SUCCESS,
-  LOGOUT,
-} from "./actionTypes";
+import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS } from "./actionType";
+
 
 const initialState = {
   cart: [],
