@@ -4,6 +4,7 @@ import PincodeChecker from '../Components/Cart/PincodeChecker';
 import CartProductCard from '../Components/Cart/CartProductCard';
 import { useCartContext } from '../Components/Cart/CartContext';
 import { Link } from 'react-router-dom';
+import OrderSummary from '../Components/Cart/OrderSummary';
 
 const Cart = () => {
   // const userData = useSelector(store => store.authReducer.user);
@@ -29,11 +30,11 @@ const Cart = () => {
           }
         </div>
         <div style={{ flex: 1 }}>
-
+          <OrderSummary />
         </div>
       </div>
-      <div style={{ boxShadow: "#edeaea 3px -8px 15px", position: "absolute", bottom: 0, width: "100vw", backgroundColor: "white", padding: "20px 0px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", maxWidth: 992, margin: "auto" }}>
+      <div style={{ boxShadow: "#edeaea 3px -8px 15px", position: "sticky", bottom: 0, width: "100vw", backgroundColor: "white", padding: "20px 0px" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", maxWidth: 1040, margin: "auto" }}>
           <h2>Total ({totalItems} Items): ₹ {totalPrice}</h2>
           <Link to="/pay">Proceed to Checkout</Link>
         </div>

@@ -3,6 +3,7 @@ import { useCallback } from "react";
 import { useCartContext } from "../Components/Cart/CartContext";
 import css from "./Cart.module.css";
 import CartProductCard from "../Components/Cart/CartProductCard";
+import OrderSummary from "../Components/Cart/OrderSummary";
 
 const Payments = () => {
     const [Razorpay] = useRazorpay();
@@ -19,7 +20,7 @@ const Payments = () => {
 
         const options = {
             key: process.env.REACT_APP_RZ_KEY_ID,
-            amount: `${amountInRs}`,
+            amount: `${amountInRs*100}`,
             currency: "INR",
             name: "Team benevolent-boot-3435",
             description: "Test Transaction",
@@ -55,11 +56,11 @@ const Payments = () => {
                     }
                 </div>
                 <div style={{ flex: 1 }}>
-
+                    <OrderSummary />
                 </div>
             </div>
-            <div style={{ boxShadow: "#edeaea 3px -8px 15px", position: "absolute", bottom: 0, width: "100vw", backgroundColor: "white", padding: "20px 0px" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", maxWidth: 992, margin: "auto" }}>
+            <div style={{ boxShadow: "#edeaea 3px -8px 15px", position: "sticky", bottom: 0, width: "100vw", backgroundColor: "white", padding: "20px 0px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", maxWidth: 1040, margin: "auto" }}>
                     <h2>Total ({totalItems} Items): ₹ {totalPrice}</h2>
                     <button onClick={() => handlePayment(totalPrice)}>Pay Online</button>
                 </div>
