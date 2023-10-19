@@ -1,25 +1,44 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import HomePage from '../Pages/HomePage'
-import Products from '../Pages/Products'
-import Login from '../Pages/Login'
-import Cart from '../Pages/Cart'
-import Payments from '../Pages/Payments'
-import { CartContextProvider } from '../Components/Cart/CartContext'
-
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "../Pages/HomePage";
+import Products from "../Pages/Products";
+import Login from "../Authentication/Login"
+import SignUp from "../Authentication/SignUp"
+import Cart from "../Pages/Cart";
+import PrivateRoutes from "./PrivateRoutes";
+import { CartContextProvider } from "../Components/Cart/CartContext";
+import Payments from "../Pages/Payments";
 
 const AllRoutes = () => {
   return (
-    <CartContextProvider>
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/products' element={<Products />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='/pay' element={<Payments />} />
-      </Routes>
-    </CartContextProvider>
-  )
-}
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route
+        path="/products"
+        element={
+          <PrivateRoutes>
+            {" "}
+            <Products />
+          </PrivateRoutes>
+        }
+      />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<SignUp />} />
+      <CartContextProvider>
+        <Route
+          path="/cart"
+          element={
+            <PrivateRoutes>
+              <Cart />
+            </PrivateRoutes>
+          }
+        />
+        <Route path="pay" element={<PrivateRoutes>
+          <Payments />
+        </PrivateRoutes>} />
+      </CartContextProvider>
+    </Routes>
+  );
+};
 
-export default AllRoutes
+export default AllRoutes;
