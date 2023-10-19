@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import styles from "./signup.module.css";
 import {
   createUserWithEmailAndPassword,
   getAuth,
   updateProfile,
 } from "firebase/auth";
 import { initializeApp } from "firebase/app";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA3hCEbzpPyIuvEipzQY5zazVDYsq5XYhk",
@@ -31,15 +32,7 @@ const SignUp = () => {
   const [token, setToken] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-
-
-
-
-   console.log(isAuthenticated)
-
-
-
-
+  console.log(isAuthenticated);
 
   const handleCreateAccount = (e) => {
     e.preventDefault();
@@ -60,7 +53,7 @@ const SignUp = () => {
     const auth = getAuth();
 
     setDisableBtn(true);
-    setIsAuthenticated(false)
+    setIsAuthenticated(false);
     createUserWithEmailAndPassword(auth, email, password)
       .then((res) => {
         // Signed up
@@ -86,71 +79,62 @@ const SignUp = () => {
   if (isAuthenticated) {
     return <Navigate to="/" />;
   }
- return <Navigate to="/signup" />
-  
 
   return (
-    <div>
-      <h1>Create Account</h1>
-      <form onSubmit={(e) => handleCreateAccount(e)}>
-        <label>
-          First Name :
+    <div className={styles.signupComponent}>
+      <div className={styles.formContainer}>
+        <h1>Create Account</h1>
+        <form onSubmit={(e) => handleCreateAccount(e)}>
+          <label>First Name:</label>
           <input
             type="text"
             placeholder="First name"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
-        </label>
-        <br />
-        <br />
-        <label>
-          Last Name :
+          <br />
+          <label>Last Name:</label>
           <input
             type="text"
             placeholder="Last name"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
           />
-        </label>
-        <br />
-        <br />
-        <label>
-          Email
+          <br />
+          <label>Email:</label>
           <input
             type="email"
-            placeholder="Email"
+            placeholder="example@gmail.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-        </label>
-        <br />
-        <br />
-        <label>
-          Password :
+          <br />
+          <label>Password:</label>
           <input
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        </label>
-        <br />
-        <br />
-        <label>
-          Confirm-Password :
+          <br />
+          <label>Confirm Password:</label>
           <input
             type="password"
-            placeholder="Confirm-Password"
+            placeholder="Confirm Password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
-        </label>
-        <br />
-        <br />
-        <p>{error} </p>
-        <input type="submit" value="Create" disabled={disableBtn} />
-      </form>
+          <br />
+          <p className={styles.error}>{error}</p>
+          <input
+            type="submit"
+            value="Sign up"
+            disabled={disableBtn}
+            className={styles.submitButton}
+          />
+        </form>
+        <h3>Already have an account? <span><Link className={styles.loginButton} to="/login" >Log in</Link></span> </h3>
+      </div>
     </div>
   );
 };
