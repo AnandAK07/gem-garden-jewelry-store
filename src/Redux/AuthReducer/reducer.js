@@ -26,7 +26,7 @@ export const authReducer = (state = initialState, { type, payload }) => {
     case LOGIN_SUCCESS: {
       return {
         ...state,
-        token: action.payload,
+        token: payload,
         isAuth: true,
         loading: false,
         error: null,
@@ -39,7 +39,7 @@ export const authReducer = (state = initialState, { type, payload }) => {
         token: "",
         isAuth: false,
         loading: false,
-        error: action.payload,
+        error: payload,
         success: false,
       };
     }
