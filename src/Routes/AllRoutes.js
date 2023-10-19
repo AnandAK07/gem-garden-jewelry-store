@@ -24,19 +24,17 @@ const AllRoutes = () => {
       />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
-      <CartContextProvider>
-        <Route
-          path="/cart"
-          element={
-            <PrivateRoutes>
-              <Cart />
-            </PrivateRoutes>
-          }
-        />
-        <Route path="pay" element={<PrivateRoutes>
-          <Payments />
-        </PrivateRoutes>} />
-      </CartContextProvider>
+      <Route
+        path="/cart"
+        element={
+          <PrivateRoutes>
+            <Cart />
+          </PrivateRoutes>
+        }
+      />
+      <Route path="pay" element={<PrivateRoutes>
+        <Payments />
+      </PrivateRoutes>} />
     </Routes>
   );
 };
