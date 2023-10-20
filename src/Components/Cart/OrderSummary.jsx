@@ -1,6 +1,6 @@
 import { useState } from "react";
 import css from "./OrderSummary.module.css";
-import { useCartContext } from "./CartContext";
+import { useSelector } from "react-redux";
 
 const TabsEnum = {
   ENTER_CODE: "ENTER_CODE",
@@ -10,7 +10,8 @@ const TabsEnum = {
 const OrderSummary = () => {
   const [activeTab, setActiveTab] = useState(TabsEnum.ENTER_CODE);
 
-  const { totalMrp, totalPrice } = useCartContext();
+  const totalMrp = useSelector(store => store.authReducer.cart.totalMrp);
+  const totalPrice = useSelector(store => store.authReducer.cart.totalPrice);
 
   const [availableCouponCodes] = useState([
     {

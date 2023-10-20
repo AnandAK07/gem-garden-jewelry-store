@@ -1,15 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import css from "./Cart.module.css";
 import PincodeChecker from '../Components/Cart/PincodeChecker';
 import CartProductCard from '../Components/Cart/CartProductCard';
-import { useCartContext } from '../Components/Cart/CartContext';
 import { Link } from 'react-router-dom';
 import OrderSummary from '../Components/Cart/OrderSummary';
+import { useSelector } from 'react-redux';
 
 const Cart = () => {
   // const userData = useSelector(store => store.authReducer.user);
   const userData = null;
-  const {cartItems, totalPrice, totalItems} = useCartContext();
+  const cart = useSelector(store=>store.authReducer.cart);
+
+  useEffect(()=>{
+    console.log({cart});
+  });
   
   return (
     <>
@@ -19,7 +23,7 @@ const Cart = () => {
           <PincodeChecker />
           <hr />
           {
-            cartItems?.map((item, index) => {
+            cart?.cart?.map((item, index) => {
               return (
                 <>
                   <CartProductCard cartProduct={item} key={index} />
@@ -35,7 +39,7 @@ const Cart = () => {
       </div>
       <div style={{ boxShadow: "#edeaea 3px -8px 15px", position: "sticky", bottom: 0, backgroundColor: "white", padding: "20px 0px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", maxWidth: 1040, margin: "auto" }}>
-          <h2>Total ({totalItems} Items): ₹ {totalPrice}</h2>
+          <h2>Total ({cart.totalItems} Items): ₹ {cart.totalPrice}</h2>
           <Link to="/pay">Proceed to Checkout</Link>
         </div>
       </div>
