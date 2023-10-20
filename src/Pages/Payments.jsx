@@ -59,7 +59,7 @@ const Payments = () => {
                     <OrderSummary />
                 </div>
             </div>
-            <div style={{ boxShadow: "#edeaea 3px -8px 15px", position: "sticky", bottom: 0, width: "100vw", backgroundColor: "white", padding: "20px 0px" }}>
+            <div style={{ boxShadow: "#edeaea 3px -8px 15px", position: "sticky", bottom: 0, backgroundColor: "white", padding: "20px 0px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", maxWidth: 1040, margin: "auto" }}>
                     <h2>Total ({totalItems} Items): ₹ {totalPrice}</h2>
                     <button onClick={() => handlePayment(totalPrice)}>Pay Online</button>
