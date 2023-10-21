@@ -89,4 +89,117 @@
     cursor: pointer;
     background-color: white;
     text-decoration: underline;
+  } 
+
+
+
+
+
+
+
+
+
+
+  @media (min-width: 350px) and (max-width: 600px) {
+   /* Default Styles */
+   .signupComponent{
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-taobao-jewelry-fresh-and-simple-gold-jewelry-poster-image_194638.jpg');
+    background-size:auto;
+    background-position: center;
+  }
+ 
+
+.container {
+  display: flex;
+  background: linear-gradient(to bottom, #ffffff, #333333); /* Light to dark background gradient */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+  
+
+.formContainer {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  margin: auto;
+  margin-top: -50px;
+}
+
+/* Form Styles */
+.formContainer h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.formContainer label {
+  display: none;
+  text-align: left;
+  margin-top: 10px;
+  font-weight: 500;
+  margin-left: 20px;
+}
+
+.formContainer input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight:bolder;
+}
+
+/* Error and Submit Button Styles */
+.error {
+  color: red;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+input[type="submit"],
+button {
+display: block;
+width: 30%;
+margin: auto;
+padding: 10px;
+background-color: #007BFF;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-weight: bold;
+}
+.submitButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.loginButton{
+  border: none;
+  font-size: medium;
+  font-weight: 600;
+  color: #1d73d5;
+  cursor: pointer;
+  background-color: white;
+  text-decoration: none;
+}
+.loginButton:hover{
+  border: none;
+  font-size: medium;
+  font-weight: 600;
+  color: #1d73d5;
+  cursor: pointer;
+  background-color: white;
+  text-decoration: underline;
+} 
+
+.signupComponent h3{
+  font-size: medium;
+}
+
   }
