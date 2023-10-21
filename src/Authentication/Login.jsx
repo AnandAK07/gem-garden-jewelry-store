@@ -10,6 +10,7 @@ import HomePage from "../Pages/HomePage";
 import SignUp from "./SignUp";
 import styles from "./Login.module.css";
 import ThemeContext from "../ThemeContext/ThemeContext";
+import Footer from "../Components/Footer";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -116,6 +117,7 @@ const Login = () => {
         </form>
       </div>
     </div>
+    <Footer/>
     </div>
   );
 };
