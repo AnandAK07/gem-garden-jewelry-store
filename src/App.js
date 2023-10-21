@@ -2,29 +2,25 @@ import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import AllRoutes from "./Routes/AllRoutes";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getAuth,onAuthStateChanged} from "firebase/auth";
+import Theme from "./Theme/Theme";
+import ThemeContext from "./ThemeContext/ThemeContext";
 
 function App() {
-  const [name, setName] = useState("");
+ const {light} = useContext(ThemeContext)
 
-  const auth = getAuth();
 
-  useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        setName(user.displayName);
-      } else {
-        setName("");
-      }
-    });
-  }, [name,auth,onAuthStateChanged]);
+
+
 
   return (
-    <div className="App">
-    <h1>Welcome :{name} </h1>
+    <div className={light?"light":"dark"}>
+    <h1>Welcome :{<Theme/>} </h1>
+    
       <Navbar />
       <AllRoutes />
+      
     </div>
   );
 }

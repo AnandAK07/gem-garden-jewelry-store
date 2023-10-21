@@ -90,3 +90,93 @@ button {
     background-color: white;
     text-decoration: underline; 
   }
+
+
+
+
+
+
+
+
+
+
+  @media (min-width: 350px) and (max-width: 600px) {
+  /* Default Styles */
+.loginComponent{
+  background-image: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-taobao-jewelry-fresh-and-simple-gold-jewelry-poster-image_194638.jpg');
+  background-size:auto;
+  background-position: center;
+}
+
+.loginContainer {
+  margin: auto;
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  height: 70%;
+  margin-top: -50px;
+  padding-bottom: 60px;
+}
+
+/* Form Styles */
+.loginContainer h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+
+}
+
+.loginContainer label {
+  display: block;
+  text-align: left;
+  margin-top: 10px;
+  font-weight: 700;
+  margin-left: 25px;
+  
+}
+
+.loginContainer input {
+  width: 80%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight:bolder; 
+}
+
+/* Error and Submit Button Styles */
+.error {
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+}
+
+input[type="submit"],
+button {
+display: block;
+width: 30%;
+margin: auto;
+padding: 10px;
+background-color: #007BFF;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-weight: bold;
+}
+
+.submitButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Sign Up Button Styles */
+
+
+    
+  }
