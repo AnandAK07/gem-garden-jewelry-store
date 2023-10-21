@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar";
 import AllRoutes from "./Routes/AllRoutes";
 import { useEffect, useState } from "react";
 import { getAuth,onAuthStateChanged} from "firebase/auth";
+import Footer from "./Components/Footer";
 
 function App() {
   const [name, setName] = useState("");
@@ -25,6 +26,7 @@ function App() {
     <h1>Welcome :{name} </h1>
       <Navbar />
       <AllRoutes />
+      <Footer/>
     </div>
   );
 }
