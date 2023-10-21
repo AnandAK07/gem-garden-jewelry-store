@@ -8,6 +8,7 @@ import {
 import { initializeApp } from "firebase/app";
 import { Link, Navigate } from "react-router-dom";
 import ThemeContext from "../ThemeContext/ThemeContext";
+import Footer from "../Components/Footer";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA3hCEbzpPyIuvEipzQY5zazVDYsq5XYhk",
@@ -144,6 +145,7 @@ const SignUp = () => {
         <h3>Already have an account? <span><Link className={styles.loginButton} to="/login" >Log in</Link></span> </h3>
       </div>
     </div>
+    <Footer/>
     </div>
   );
 };
