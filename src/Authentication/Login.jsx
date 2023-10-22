@@ -4,11 +4,13 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import HomePage from "../Pages/HomePage";
 import SignUp from "./SignUp";
 import styles from "./Login.module.css";
+import ThemeContext from "../ThemeContext/ThemeContext";
+import Footer from "../Components/Footer";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -17,6 +19,14 @@ const Login = () => {
   const [disableBtn, setDisableBtn] = useState(false);
   const [token, setToken] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+
+
+
+  const {light} = useContext(ThemeContext)
+
+
+
 
   const handleLoginAccount = (e) => {
     e.preventDefault();
@@ -62,6 +72,7 @@ const Login = () => {
   }
 
   return (
+    <div className={light?"light":"dark"}>
     <div className={styles.loginComponent}>
       <div className={styles.loginContainer}>
         <h1>Login</h1>
@@ -105,6 +116,8 @@ const Login = () => {
           </h3>
         </form>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };

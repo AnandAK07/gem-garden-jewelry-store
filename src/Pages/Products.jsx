@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { getData } from '../Redux/ProductsReducer/action'
 import { useDispatch, useSelector } from 'react-redux'
+import Footer from '../Components/Footer'
 
 const Products = () => {
 
@@ -15,6 +16,7 @@ const Products = () => {
     {items.map((item)=>{
       return <div key={item.id}>{item.title}</div>
     })}
+    <Footer/>
     </div>
   )
 }

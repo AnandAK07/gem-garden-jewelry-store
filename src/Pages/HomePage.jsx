@@ -1,4 +1,5 @@
 import style from "./HomePage.module.css"
+import Footer from '../Components/Footer'
 
 const HomePage = () => {
   console.log(window.innerHeight)
@@ -118,6 +119,8 @@ const HomePage = () => {
       </section>
 
     </main>
+    <Footer/>
+    </div>
   )
 }
 

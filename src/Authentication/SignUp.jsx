@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./signup.module.css";
 import {
   createUserWithEmailAndPassword,
@@ -7,6 +7,8 @@ import {
 } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import { Link, Navigate } from "react-router-dom";
+import ThemeContext from "../ThemeContext/ThemeContext";
+import Footer from "../Components/Footer";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA3hCEbzpPyIuvEipzQY5zazVDYsq5XYhk",
@@ -33,6 +35,12 @@ const SignUp = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   console.log(isAuthenticated);
+
+  const {light} = useContext(ThemeContext)
+
+
+
+
 
   const handleCreateAccount = (e) => {
     e.preventDefault();
@@ -81,6 +89,7 @@ const SignUp = () => {
   }
 
   return (
+    <div className={light?"light":"dark"}>
     <div className={styles.signupComponent}>
       <div className={styles.formContainer}>
         <h1>Create Account</h1>
@@ -135,6 +144,8 @@ const SignUp = () => {
         </form>
         <h3>Already have an account? <span><Link className={styles.loginButton} to="/login" >Log in</Link></span> </h3>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };
