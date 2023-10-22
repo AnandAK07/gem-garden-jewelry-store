@@ -20,7 +20,8 @@ const Payments = () => {
       };
 
       const options = {
-        key: process.env.REACT_APP_RZ_KEY_ID,
+      // key: process.env.REACT_APP_RZ_KEY_ID,
+        key: `rzp_test_sXLjDxRmmjkSmE`,
         amount: `${amountInRs * 100}`,
         currency: "INR",
         name: "Team benevolent-boot-3435",
