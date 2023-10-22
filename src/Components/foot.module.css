@@ -1,0 +1,109 @@
+.footerComponent{
+    background-color:#2e2c2d ;
+    color: white;
+    display: flex;
+    padding-left:  100px  ;
+    padding-right: 50px  ;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    gap: 100px;
+    
+}
+.social_media_Div{
+    display: flex;
+    gap: 8px;
+}
+.social_media{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: 50px;
+    margin-left: -5px;
+}
+.social_media img{
+    width:50px;
+    height:50px;
+}
+.contacts p {
+    padding-right: 20px;
+}
+
+.policy{
+    display:flex;
+    justify-content:space-around;
+}
+.mailInput{
+    width:40%;
+     border:none;background-color:#2e2c2d; 
+     height:30px;
+     color:wheat;
+}
+
+
+@media (min-width: 350px) and (max-width: 600px) {
+    .footerComponent{
+        background-color:#2e2c2d ;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        padding-left:  10px  ;
+        padding-right: 5px  ;
+        padding-top: 50px;
+        padding-bottom: 150px;
+        margin-top: 10px;
+        gap: 10px;
+        
+        overflow: hidden;
+        
+    }
+    .social_media_Div{
+        display: flex;
+        gap: 8px;
+        margin-top: 50px;
+        margin-left: 5px;
+        padding-left: 5px;
+    }
+    .social_media{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-top: 50px;
+        
+    }
+    .app_Title h2{
+        margin-top: 100px;
+    }
+   
+    .contacts{
+        display: none;
+    }
+    
+    .policy{
+        display:flex;
+        justify-content:space-around;
+        margin-top: 15px;
+    }
+    .mailInput{
+        width: 90%;
+        margin-left: 5px;
+         border:none;background-color:#2e2c2d; 
+         height:30px;
+         color:wheat;
+         margin-top: 10px;
+
+    }
+    .jwellery_Type{
+        display: none;
+    }
+
+    .app_Title{
+        display: flex;
+        justify-content:space-around;
+        margin-top: 200px;
+    }
+
+.email_Section{
+    margin-top: -350px;
+    padding-bottom: 50px;
+}
+}
