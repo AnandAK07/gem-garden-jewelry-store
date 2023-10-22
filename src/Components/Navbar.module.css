@@ -9,18 +9,23 @@
 .sectionP1 {
     padding: 35px 140px 0px 140px;
     background-color: rgb(41, 36, 33);
-    color: rgba(235, 235, 235, 0.9);
-    position: relative;
+    
 }
 
 .navbar {
-
+    
+    color: rgba(235, 235, 235, 0.9);
+    position: relative;
     color: white;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-family: 'Nunito Sans', sans-serif;
+    position: fixed;
+    z-index: 999;
+    width: 81%;
+
 }
 
 .navbar a {
@@ -46,45 +51,10 @@
 
 }
 
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-}
 
-.hero div:nth-child(1) {
-    width: 25%;
-    text-align: start;
-}
 
-.hero div:nth-child(1) h2 {
-    font-size: 39px;
-    font-weight: 500;
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 1px;
-}
+/* .scrollNav{
+   
+} */
 
-.hero div:nth-child(1) span {
-    padding-top: 45px;
-    color: rgb(135, 135, 135);
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: .7px;
-}
-
-.hero div:nth-child(1) p {
-    color: rgb(200, 195, 195);
-    font-size: 22px;
-    font-weight: 500;
-    letter-spacing: 3.5px;
-}
-
-.hero div:nth-child(2) {
-    width: 60%;
-}
-
-.hero div:nth-child(2) img {
-    width: 86%;
-
-}
+/* Navbar_scrollNav__Pfsh2 */
