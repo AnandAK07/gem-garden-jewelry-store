@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&family=Oswald&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sectionP1 {
+    padding: 35px 140px 0px 140px;
+    background-color: rgb(41, 36, 33);
+    
+}
+
+.navbar {
+    
+    color: rgba(235, 235, 235, 0.9);
+    position: relative;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Nunito Sans', sans-serif;
+    position: fixed;
+    z-index: 999;
+    width: 81%;
+
+}
+
+.navbar a {
+    text-decoration: none;
+    color: rgba(235, 235, 235, 0.9);
+
+}
+
+.leftNav,
+.rightNav {
+    display: flex;
+    gap: 60px;
+    font-size: 18px;
+    font-weight: 500;
+
+}
+
+.logoNav {
+    font-family: 'Oswald', sans-serif;
+    font-size: 27px;
+    letter-spacing: 1.5px;
+    font-weight: 900;
+
+}
+
+
+
+/* .scrollNav{
+   
+} */
+
+/* Navbar_scrollNav__Pfsh2 */

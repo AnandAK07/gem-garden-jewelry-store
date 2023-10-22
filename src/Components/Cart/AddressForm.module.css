@@ -1,0 +1,21 @@
+.row {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10;
+}
+
+.col2{
+    flex: 1;
+    margin: 10px;
+}
+
+.col2 > input {
+    padding: 5px 10px;
+}
+
+label::after{
+    content: "*";
+    margin-left: 5px;
+    color: red;
+}
