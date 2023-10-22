@@ -3,6 +3,7 @@
 <h4>Anand kumar - Product Page</h4>
 <h4>Akshay - Payment Page</h4>
 <h4>Shushil - HomePage</h4>
+<h4>Md Amir - Navbar</h4>
 
 
 Anand :-ProductPage
