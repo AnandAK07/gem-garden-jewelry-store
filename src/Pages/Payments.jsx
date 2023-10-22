@@ -4,6 +4,7 @@ import css from "./Cart.module.css";
 import CartProductCard from "../Components/Cart/CartProductCard";
 import OrderSummary from "../Components/Cart/OrderSummary";
 import { useSelector } from "react-redux";
+import Footer from "../Components/Footer";
 
 const Payments = () => {
   const [Razorpay] = useRazorpay();
@@ -86,6 +87,7 @@ const Payments = () => {
           </button>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
