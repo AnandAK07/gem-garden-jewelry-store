@@ -1,15 +1,45 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import styles from "./Navbar.module.css"
 
 const Navbar = () => {
-    
+
+    // const [scrollHeight, setScrollHeight] = useState(0);
+
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         setScrollHeight(document.documentElement.scrollTop);
+    //         console.log(scrollHeight)
+    //     };
+
+    //     window.addEventListener("scroll", handleScroll);
+
+    //     return () => {
+    //         window.removeEventListener("scroll", handleScroll);
+    //     };
+    // });
+
+    // useEffect(() => {
+    //     if (scrollHeight > 15) {
+    //         const nav = document.querySelector("section>div")
+    //         // nav.classList.remove("Navbar_navbar__pCmRo")
+    //         nav.classList.add("Navbar_scrollNav__Pfsh2")
+            
+    //     } 
+    //     else if(scrollHeight<=15) {
+    //         const nav = document.querySelector("section>div")
+    //         // nav.classList.add("Navbar_navbar__pCmRo")
+    //         nav.classList.remove("Navbar_scrollNav__Pfsh2")
+    //     }
+    // }, [scrollHeight]);
+
+
     return (
         <>
             <section className={`${styles.sectionP1}`}>
 
-                <div className={`${styles.navbar}`}>
+                <div className={`${styles.navbar}` }>
 
 
                     <div className={styles.leftNav}>
@@ -32,19 +62,7 @@ const Navbar = () => {
 
                 </div>
 
-                <div className={`${styles.hero}`}>
-                    <div>
-                        <h2>Your Jewelry Search Starts Here</h2>
-                        <br />
-                        <span>Discover  the perfect jewelry pieces &nbsp;&nbsp;  for your uniqye style at our store</span>
-                        <br /><br /><br /><br /><br />
-                        <p>DISCOVER</p>
-                    </div>
 
-                    <div>
-                    <img src={require('./image/hero.png')} alt="Hero Img" />
-                    </div>
-                </div>
 
             </section>
 

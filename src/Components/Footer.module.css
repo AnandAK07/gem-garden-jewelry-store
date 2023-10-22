@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&family=Oswald&display=swap');
+
+
+.footer {
+  background-color: rgb(46, 44, 45);
+  padding: 80px 140px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.firstCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.firstCol h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 28px;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.firstCol>div {
+  padding: 0 4px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.secondCol {
+  display: flex;
+  width: 33%;
+  justify-content: space-between;
+  /* border: 1px solid rgb(0, 13, 255); */
+}
+
+
+.secondCol>div {
+  display: flex;
+  text-align: start;
+  flex-direction: column;
+  color: rgba(221, 221, 221, 0.885);
+  justify-content: space-between;
+  font-size: 14px;
+
+}
+
+.thirdCol {
+  width: 28%;
+  text-align: start;
+}
+
+.thirdCol>p {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.952);
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.thirdCol>input {
+  padding-bottom: 7px;
+
+  border: none;
+  outline: none;
+  background-color: rgb(46, 44, 45);
+  color: white;
+  width: 95%;
+  border-bottom: 2px solid rgb(206, 200, 200);
+  position: relative;
+}
+
+.thirdCol>input::placeholder {
+  color: rgba(224, 220, 220, 0.579);
+  font-size: 14px;
+}
+
+.thirdCol i {
+  position: absolute;
+  color: rgb(255, 255, 255);
+  
+}
+
+.thirdCol>div {
+  display: flex;
+  justify-content: space-between;
+  color: rgb(214, 208, 208);
+  margin-top: 70px;
+  font-size: 14px;
+}

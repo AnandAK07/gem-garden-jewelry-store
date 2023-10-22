@@ -44,10 +44,8 @@ const Cart = () => {
           <Link to="/pay">Proceed to Checkout</Link>
         </div>
       </div>
-    </>
-    
-    <Footer/>
-    </div>
+      <Footer/>
+    </>    
   )
 }
 
