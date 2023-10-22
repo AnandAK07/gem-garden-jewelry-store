@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&family=Oswald&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sectionP1 {
+    padding: 0 140px;
+
+}
+
+#collection {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.sectionM1 {
+    margin: 100px 0;
+}
+
+#collection>.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: start;
+}
+
+#collection>.heading>div:nth-child(1) h1 {
+    font-size: 30px;
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif;
+    color: rgba(0, 0, 0, 0.93);
+    margin-bottom: 10px;
+}
+
+#collection>.heading>div:nth-child(1) span {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+#collection>.heading>div:nth-child(2) p {
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+#collection .productContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 60px;
+}
+
+#collection .card {
+    display: flex;
+    width: 24.5%;
+    flex-direction: column;
+    text-align: start;
+}
+
+#collection .cardImg {
+    width: 100%;
+    height: 296px;
+    background-color: rgb(249, 248, 246);
+}
+
+#collection .cardTitle {
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.92);
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+#collection .cardDesc {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.878);
+}
+
+#collection .cardPrice {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.508);
+}
+
+#categories {
+    display: flex;
+    border: 2px solid blue;
+    justify-content: space-between;
+}
+
+#categories>div:nth-child(1) {
+    width: 40%;
+    /* border: 2px solid rgb(0, 255, 123); */
+    padding: 35px 0px 50px 5px;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+#categories>div:nth-child(1)>div>h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+#categories>div:nth-child(1)>div>span {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(16, 16, 16, 0.77);
+}
+
+
+#categories>div:nth-child(1)>p {
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+#categories>div:nth-child(1)>.linkContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 30px;
+    height: 60%;
+}
+
+#categories>div:nth-child(1)>.linkContainer span {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.836);
+}
+
+.currentLink{
+    font-size: 17px !important;
+    text-decoration: underline;
+    text-underline-offset: px;
+}
+
+
+#categories>div:nth-child(2) {
+    width: 60%;
+    /* border: 2px solid rgb(255, 0, 0); */
+}
+
+#categories>div:nth-child(2) img {
+    width: 100%;
+    height: 600px;
+}

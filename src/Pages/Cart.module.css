@@ -1,0 +1,22 @@
+.cart-container{
+    display: flex;
+    max-width: 1040px;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    gap: 30px;
+    margin: 10px 30px;
+    margin-bottom: 50px;
+}
+
+@media (min-width: 1120px) {
+    .cart-container{
+        display: flex;
+        max-width: 1040px;
+        flex-direction: row;
+        justify-content: center;
+        margin: auto !important;
+        gap: 30px;
+        margin: 0px;
+    }
+}

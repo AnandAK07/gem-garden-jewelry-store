@@ -6,6 +6,7 @@ import Login from "../Authentication/Login"
 import SignUp from "../Authentication/SignUp"
 import Cart from "../Pages/Cart";
 import PrivateRoutes from "./PrivateRoutes";
+import Payments from "../Pages/Payments";
 
 const AllRoutes = () => {
   return (
@@ -30,6 +31,9 @@ const AllRoutes = () => {
           </PrivateRoutes>
         }
       />
+      <Route path="pay" element={<PrivateRoutes>
+        <Payments />
+      </PrivateRoutes>} />
     </Routes>
   );
 };
