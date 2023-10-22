@@ -1,15 +1,8 @@
-import React from 'react'
-import Footer from '../Components/Footer'
+import React from "react";
+
 
 const HomePage = () => {
-  return (
-    <div>HomePage
-    
+  return <div>HomePage</div>;
+};
 
-    
-    </div>
-    
-  )
-}
-
-export default HomePage
+export default HomePage;

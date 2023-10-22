@@ -1,32 +1,43 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import style from "./Nav.module.css";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
-    const links=[
-        {
-            title:"HomePage",
-            path:'/'
-        },
-        {
-            title:"Products",
-            path:'/products'
-        },
-        {
-            title:"Cart",
-            path:'/cart'
-        },
-        {
-            title:"Login",
-            path:'/login'
-        }
-    ]
-  return (
-    <div style={{display:'flex', justifyContent:'space-between'}}>
-        {links.map((link)=>{
-            return <Link key={link.path} to={link.path}>{link.title}</Link>
-        })}
-    </div>
-  )
-}
+  const navigate = useNavigate();
+  const { isAuth } = useSelector((store) => store.authReducer);
+  console.log(isAuth);
 
-export default Navbar
+  return (
+    <div className={style.navbar}>
+      <Link to={"/"}>
+        <img
+          src="https://gem-garden.vercel.app/static/media/GemGardenLogo3.397f01f6d4b951e443aa.png"
+          alt="logo"
+          className={style.logo}
+        />
+      </Link>
+
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div className={style.nav_child1}>
+          <button className={style.btn}>Jwellery</button>
+          <button className={style.btn}>Watches</button>
+          <button className={style.btn}>Gifts</button>
+        </div>
+        <div className={style.nav_child2}>
+          <button className={style.btn}>Contact Us</button>
+
+          <button onClick={() => navigate("/login")} className={style.btn}>
+            Account
+          </button>
+
+          <button onClick={() => navigate("/cart")} className={style.btn}>
+            Bag
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;

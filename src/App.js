@@ -3,7 +3,7 @@ import "./App.css";
 import Navbar from "./Components/Navbar";
 import AllRoutes from "./Routes/AllRoutes";
 import { useEffect, useState } from "react";
-import { getAuth,onAuthStateChanged} from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Footer from "./Components/Footer";
 
 function App() {
@@ -19,14 +19,15 @@ function App() {
         setName("");
       }
     });
-  }, [name,auth,onAuthStateChanged]);
+  }, [name, auth, onAuthStateChanged]);
 
   return (
     <div className="App">
-    <h1>Welcome :{name} </h1>
       <Navbar />
+
       <AllRoutes />
-      <Footer/>
+      <h1>Welcome :{name} </h1>
+      <Footer />
     </div>
   );
 }
