@@ -5,6 +5,7 @@ import CartProductCard from '../Components/Cart/CartProductCard';
 import { Link } from 'react-router-dom';
 import OrderSummary from '../Components/Cart/OrderSummary';
 import { useSelector } from 'react-redux';
+import Footer from '../Components/Footer'
 
 const Cart = () => {
   // const userData = useSelector(store => store.authReducer.user);
@@ -43,7 +44,8 @@ const Cart = () => {
           <Link to="/pay">Proceed to Checkout</Link>
         </div>
       </div>
-    </>
+      <Footer/>
+    </>    
   )
 }
 

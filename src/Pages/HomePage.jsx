@@ -9,6 +9,7 @@ const HomePage = () => {
   
  
   return (
+    <>
     <main>
 
       <div className={`${style.hero} ${style.sectionP1}`}>
@@ -190,6 +191,8 @@ const HomePage = () => {
       <Footer />
 
     </main>
+    <Footer/>
+    </>
   )
 }
 
