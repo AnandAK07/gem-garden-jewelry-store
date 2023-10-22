@@ -55,3 +55,16 @@
 .m-0{
   margin: 0px;
 }
+.theme-Btn{
+  width: 50px;
+  border-radius: 60%;
+  background-color: rgb(228, 207, 207);
+}
+.light{
+  background-color: white;
+  color: black;
+}
+.dark{
+  background-color: black;
+  color: rgb(255, 255, 255);
+}
