@@ -6,16 +6,14 @@ const CartProductCard = ({ cartProduct }) => {
         <>
             <div className={css['cart-product-container']}>
                 <div className={css['cart-image-container']}>
-                    <img src="" alt="" className={css['cart-image-container']}/>
+                    <img src={cartProduct.image} alt="" className={css['cart-image-container']}/>
                 </div>
-                <div>
+                <div style={{display: "flex", flexDirection: "column", gap: 20}}>
                     <h2>{cartProduct.title}</h2>
                     {
-                        (cartProduct.weight || cartProduct.size) &&
-                        <p style={{display: "flex", gap: 10, alignItems: "center"}}>
-                            {cartProduct.weight && <span>Weight: {cartProduct.weight}</span>}
-                            {(cartProduct.weight || cartProduct.size) && <>|</>}
-                            {cartProduct.size && <span>Size: {cartProduct.size}</span>}
+                        (cartProduct.description) &&
+                        <p style={{display: "flex", gap: 10, alignItems: "center", color: "gray"}}>
+                            {cartProduct.description}
                         </p>
                     }
                     <div style={{display: "flex", gap: 10, alignItems: "center"}}>

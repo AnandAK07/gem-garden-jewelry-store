@@ -7,6 +7,8 @@ import SignUp from "../Authentication/SignUp"
 import Cart from "../Pages/Cart";
 import PrivateRoutes from "./PrivateRoutes";
 import Payments from "../Pages/Payments";
+import PaymentSuccess from "../Pages/PaymentSuccess";
+
 
 const AllRoutes = () => {
   return (
@@ -33,7 +35,9 @@ const AllRoutes = () => {
       />
       <Route path="pay" element={<PrivateRoutes>
         <Payments />
-      </PrivateRoutes>} />
+      </PrivateRoutes>}>
+        <Route path="success" element={<PrivateRoutes><PaymentSuccess /></PrivateRoutes>} />
+      </Route>
     </Routes>
   );
 };

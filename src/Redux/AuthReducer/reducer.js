@@ -1,25 +1,23 @@
-import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS } from "./actionType";
+import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, APPLY_PROMO, REMOVE_PROMO, ADD_ADDRESS, EMPTY_CART } from "./actionType";
 
 let tempCartItems = [
   {
     id: 1, //product ID
-    title: "Splendid Filigree Work Gold Bangle",
-    weight: "10.809 g",
-    size: "45 * 55 MM",
+    title: "MAILLON PANTHÈRE WEDDING BAND",
+    description: "Maillon Panthère wedding band, yellow gold (750/1000), set with 4 brilliant-cut diamonds totaling 0.05 carat. Width: 2.5 mm. Thickness: 2 mm (for size 52).",
     quantity: 1,
-    discountedPrice: "77080",
-    mrp: "78548",
-    image: ""
+    discountedPrice: "170000",
+    mrp: "200000",
+    image: "https://www.cartier.com/dw/image/v2/BFHP_PRD/on/demandware.static/-/Sites-cartier-master/default/dwe0b69169/images/large/87674e0fb3725583b2e5ccd9f6f9bef2.png?sw=2000&sh=2000&sm=fit&sfrm=png"
   },
   {
     id: 2,
-    title: "Traditional Fancy Graceful Gold Drop Earrings",
-    weight: "3.827 g",
-    size: "",
+    title: "BALLERINE WEDDING BAND",
+    description: "Ballerine curved wedding band, width 2 mm, platinum 950/1000, set with 27 brilliant-cut diamonds totaling 0.09 carats (for size 52).",
     quantity: 1,
-    discountedPrice: "27698",
-    mrp: "27698",
-    image: ""
+    discountedPrice: "234000",
+    mrp: "300000",
+    image: "https://www.cartier.com/dw/image/v2/BFHP_PRD/on/demandware.static/-/Sites-cartier-master/default/dw5e259833/images/large/563f9baac90b59d5851f8a6be11815a3.png?sw=2000&sh=2000&sm=fit&sfrm=png"
   }
 ]
 
@@ -33,7 +31,8 @@ class Cart {
           code: "welcome500",
           dsc: "500",
         },
-      ]
+      ];
+      this.promoDiscount = 0;
     } else {
       throw new Error("Cart must be an array!");
     }
@@ -41,22 +40,26 @@ class Cart {
   get totalItems() {
     return this.cart.reduce((acc, curr) => acc + curr.quantity, 0);
   }
-  get totalPrice() {
-    return this.cart.reduce((acc, curr) => acc + (+curr.discountedPrice * curr.quantity), 0);
+  get nonPromoDiscountAmount() {
+    let nonPromoAmount =  this.cart.reduce((acc, curr) => acc + (+curr.discountedPrice * curr.quantity), 0);
+    return nonPromoAmount;
   }
   get totalMrp() {
     return this.cart.reduce((acc, curr) => acc + (+curr.mrp * curr.quantity), 0);
   }
+  get finalPriceForCustomer() {
+    return this.nonPromoDiscountAmount - this.promoDiscount;
+  }
   add(cartItem) {
     try {
       let keys = Object.keys(cartItem);
-      if (keys.includes("id") && keys.includes("title") && keys.includes("weight") && keys.includes("size") && keys.includes("quantity") && keys.includes("discountedPrice") && keys.includes("mrp") && keys.includes("image")) {
+      if (keys.includes("id") && keys.includes("title") && keys.includes("description") && keys.includes("quantity") && keys.includes("discountedPrice") && keys.includes("mrp") && keys.includes("image")) {
         this.cart.push(cartItem);
       } else {
         throw new Error()
       }
     } catch (err) {
-      throw new Error("Cart Item should be of type object and should contain all of these properties ['id', 'title', 'weight', 'quantity', 'discountedPrice', 'mrp', 'image']!");
+      throw new Error("Cart Item should be of type object and should contain all of these properties ['id', 'title', 'description', 'quantity', 'discountedPrice', 'mrp', 'image']!");
     }
   }
   remove(id) {
@@ -77,13 +80,33 @@ class Cart {
       if (p.length > 0){
         this.appliedPromoCodes = code;
       }
+      this.promoDiscount = Number(code.dsc);
     }
+  }
+  removePromoCode() {
+    this.appliedPromoCodes = {};
   }
 }
 
 const initialState = {
   cart: new Cart(tempCartItems),
   cartTotalItems: null,
+  userData:{
+    personal:{
+      firstName:"",
+      lastName:"",
+      email:"",
+      phone:"",
+    },
+    shippingAddress:{
+      line1:"",
+      line2:"",
+      city:"",
+      state:"",
+      postalCode:"",
+
+    }
+  },
   isAuth: false,
   token: "",
   loading: false,
@@ -122,6 +145,34 @@ export const authReducer = (state = initialState, { type, payload }) => {
         error: payload,
         success: false,
       };
+    }
+    case APPLY_PROMO: {
+      let newCart = new Cart(state.cart.cart);
+      newCart.applyPromoCode(payload);
+      return {
+        ...state,
+        cart: newCart
+      };
+    }
+    case REMOVE_PROMO: {
+      let newCart = new Cart(state.cart.cart);
+      newCart.removePromoCode();
+      return {
+        ...state,
+        cart: newCart
+      };
+    }
+    case ADD_ADDRESS: {
+      return {
+        ...state,
+        userData: payload
+      }
+    }
+    case EMPTY_CART: {
+      return {
+        ...state,
+        cart: new Cart([])
+      }
     }
     default:
       return state;
