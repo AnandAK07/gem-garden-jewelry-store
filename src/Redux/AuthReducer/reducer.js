@@ -1,4 +1,3 @@
-import React from "react";
 import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS } from "./actionType";
 
 let tempCartItems = [
@@ -25,9 +24,16 @@ let tempCartItems = [
 ]
 
 class Cart {
-  constructor(cart){
-    if (Array.isArray(cart)){
+  constructor(cart) {
+    if (Array.isArray(cart)) {
       this.cart = cart;
+      this.appliedPromoCodes = {};
+      this.availableCouponCodes = [
+        {
+          code: "welcome500",
+          dsc: "500",
+        },
+      ]
     } else {
       throw new Error("Cart must be an array!");
     }
@@ -44,25 +50,33 @@ class Cart {
   add(cartItem) {
     try {
       let keys = Object.keys(cartItem);
-      if (keys.includes("id") && keys.includes("title") && keys.includes("weight") && keys.includes("size") && keys.includes("quantity") && keys.includes("discountedPrice") && keys.includes("mrp") && keys.includes("image")){
+      if (keys.includes("id") && keys.includes("title") && keys.includes("weight") && keys.includes("size") && keys.includes("quantity") && keys.includes("discountedPrice") && keys.includes("mrp") && keys.includes("image")) {
         this.cart.push(cartItem);
       } else {
         throw new Error()
       }
-    } catch(err) {
+    } catch (err) {
       throw new Error("Cart Item should be of type object and should contain all of these properties ['id', 'title', 'weight', 'quantity', 'discountedPrice', 'mrp', 'image']!");
     }
   }
-  remove(id){
+  remove(id) {
     try {
       let filteredCartItems = this.cart.filter(c => c.id === id);
-      if (filteredCartItems.length > 0){
+      if (filteredCartItems.length > 0) {
         this.cart = this.cart.filter(c => c.id !== id);
       } else {
         throw new Error();
       }
-    } catch(err) {
+    } catch (err) {
       throw new Error("No item in the cart exists with this id.");
+    }
+  }
+  applyPromoCode(code) {
+    if (code.dsc && code.code){
+      let p = this.availableCouponCodes.filter(o => o.code === code.code && o.dsc === code.dsc);
+      if (p.length > 0){
+        this.appliedPromoCodes = code;
+      }
     }
   }
 }

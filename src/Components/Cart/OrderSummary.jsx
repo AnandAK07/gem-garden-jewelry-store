@@ -12,13 +12,8 @@ const OrderSummary = () => {
 
   const totalMrp = useSelector(store => store.authReducer.cart.totalMrp);
   const totalPrice = useSelector(store => store.authReducer.cart.totalPrice);
-
-  const [availableCouponCodes] = useState([
-    {
-      code: "welcome500",
-      dsc: "500",
-    },
-  ]);
+  const appliedPromoCodes = useSelector(store => store.authReducer.cart.appliedPromoCodes);
+  const availableCouponCodes = useSelector(store => store.authReducer.cart.availableCouponCodes);
 
   return (
     <>
@@ -42,8 +37,8 @@ const OrderSummary = () => {
           </div>
           <div className={css["tabs-body"]}>
             {activeTab === TabsEnum.ENTER_CODE ? (
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <input type="text" placeholder="Enter Coupon Code" />
+              <div style={{ display: "flex", justifyContent: "space-between", gap: 10 }}>
+                <input type="text" placeholder="Enter Coupon Code" style={{padding: 10}} />
                 <button>Apply</button>
               </div>
             ) : (
