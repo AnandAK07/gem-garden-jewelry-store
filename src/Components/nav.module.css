@@ -1,0 +1,88 @@
+.navbar {
+    position: sticky;
+    width: 100%;
+    top: 0px;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(38, 36, 37);
+    z-index: 100;
+  }
+  
+  
+  .logo {
+    width: 60px;
+  }
+  
+  
+  .nav_child1 {
+    cursor: pointer;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    margin-right: 900px;
+  }
+  
+  
+  .nav_child2{
+    cursor: pointer;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+  
+  
+  }
+  
+  
+  .btn{
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: medium;
+   
+  
+  
+  }
+  
+  
+  .clicked{
+    color: rgb(125, 125, 15);
+  }
+  
+  
+  .nav_child1 span:hover {
+    color: #ff9900;
+  }
+  
+  
+  .nav_child2 button:hover {
+    color: #ff9900;
+  }
+  
+  
+  
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      height: none;
+    }
+  
+  
+    .nav_child1,
+    .nav_child2 {
+      margin: 15px 0;
+      gap: 10px;
+    }
+  
+  
+    .btn {
+      font-size: small;
+    }
+  }
+  
