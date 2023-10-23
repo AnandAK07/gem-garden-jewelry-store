@@ -36,9 +36,9 @@ const Navbar = () => {
 
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div className={style.nav_child1}>
-          <button className={style.btn}>Jwellery</button>
-          <button className={style.btn}>Watches</button>
-          <button className={style.btn}>Gifts</button>
+          <button onClick={() => navigate("/products")} className={style.btn}>Jwellery</button>
+          <button onClick={() => navigate("/necklaces")} className={style.btn}>Necklaces</button>
+          <button onClick={() => navigate("/earings")} className={style.btn}>Earings</button>
         </div>
         <div className={style.nav_child2}>
           <button className={style.btn} >Contact</button>
