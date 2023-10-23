@@ -39,10 +39,10 @@ const getDataSuccess=(payload)=>{
 const getDataError=()=>{
     return {type:GET_DATA_ERROR}
 }
-export const getData=async(dispatch)=>{
+export const getData=(currentPage,limit)=>async(dispatch)=>{
     try {
         dispatch(getDataRequest())
-        const res=await axios.get(baseUrl);
+        const res=await axios.get(`${baseUrl}?_page=${currentPage}&_limit=${limit}`);
         // console.log(res.data)
         dispatch(getDataSuccess(res.data))
     } catch (error) {

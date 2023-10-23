@@ -9,6 +9,8 @@ import {
   ADD_ADDRESS,
   EMPTY_CART,
   PAYMENT_SUCCESS,
+  ADD_ITEM_CART,
+  REMOVE_ITEM_CART
 } from "./actionType";
 
 export const loginSuccess = (payload) => {
@@ -55,4 +57,12 @@ export const paymentSuccessAction = () => {
   return {
     type: PAYMENT_SUCCESS
   }
+}
+
+export const addToCartAction=(payload)=>{
+  return{type:ADD_ITEM_CART,payload};
+}
+
+export const removeItemFromCart = (id) => {
+  return {type: REMOVE_ITEM_CART, payload: id};
 }

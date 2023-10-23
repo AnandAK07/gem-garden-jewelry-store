@@ -1,4 +1,4 @@
-import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, APPLY_PROMO, REMOVE_PROMO, ADD_ADDRESS, EMPTY_CART } from "./actionType";
+import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, APPLY_PROMO, REMOVE_PROMO, ADD_ADDRESS, EMPTY_CART, ADD_ITEM_CART, REMOVE_ITEM_CART } from "./actionType";
 
 let tempCartItems = [
   {
@@ -55,6 +55,7 @@ class Cart {
       let keys = Object.keys(cartItem);
       if (keys.includes("id") && keys.includes("title") && keys.includes("description") && keys.includes("quantity") && keys.includes("discountedPrice") && keys.includes("mrp") && keys.includes("image")) {
         this.cart.push(cartItem);
+        console.log("ITEM ADDED TO CART");
       } else {
         throw new Error()
       }
@@ -147,7 +148,7 @@ export const authReducer = (state = initialState, { type, payload }) => {
       };
     }
     case APPLY_PROMO: {
-      let newCart = new Cart(state.cart.cart);
+      let newCart = new Cart([...state.cart.cart]);
       newCart.applyPromoCode(payload);
       return {
         ...state,
@@ -155,7 +156,7 @@ export const authReducer = (state = initialState, { type, payload }) => {
       };
     }
     case REMOVE_PROMO: {
-      let newCart = new Cart(state.cart.cart);
+      let newCart = new Cart([...state.cart.cart]);
       newCart.removePromoCode();
       return {
         ...state,
@@ -173,6 +174,22 @@ export const authReducer = (state = initialState, { type, payload }) => {
         ...state,
         cart: new Cart([])
       }
+    }
+    case ADD_ITEM_CART: {
+      let newCart = new Cart([...state.cart.cart]);
+      newCart.add(payload);
+      return {
+        ...state,
+        cart: newCart
+      };
+    }
+    case REMOVE_ITEM_CART: {
+      let newCart = new Cart([...state.cart.cart]);
+      newCart.add(payload);
+      return {
+        ...state,
+        cart: newCart
+      };
     }
     default:
       return state;
