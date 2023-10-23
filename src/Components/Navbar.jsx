@@ -41,7 +41,7 @@ const Navbar = () => {
           <button className={style.btn}>Gifts</button>
         </div>
         <div className={style.nav_child2}>
-          <button className={style.btn} >Contact Us</button>
+          <button className={style.btn} >Contact</button>
 
 
           <button onClick={() => navigate("/login")} className={style.btn}>
