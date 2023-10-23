@@ -12,7 +12,7 @@
 // export default ProductDetails
 
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Footer from '../Components/Footer'
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
@@ -20,15 +20,27 @@ import { useDispatch, useSelector } from 'react-redux';
 import {getSingleProduct} from '../Redux/ProductsReducer/action'
 import {store} from '../Redux/store'
 import styles from './ProductDetails.module.css'
-import { addToCartAction } from '../Redux/AuthReducer/action';
+import { addToCartAction, removeItemFromCart } from '../Redux/AuthReducer/action';
 
 const ProductDetails = () => {
 
   const singleItem=useSelector((store)=>store.productReducer.sigleProduct)
   console.log(singleItem)
   const {id}=useParams();
+  
+  const cartItems = useSelector(store => store.authReducer.cart.cart);
+  const cart = useSelector(store => store.authReducer.cart);
+  const [itemExists, setItemExists]  = useState(false);
 
   const dispatch=useDispatch();
+
+  useEffect(()=>{
+    let f = cartItems?.filter(i => i.id === Number(id));
+    console.log(f, cartItems);
+    if (f?.length > 0){
+      setItemExists(true);
+    }
+  }, []);
 
   const addToCart = (item) => {
     console.log({item});
@@ -37,11 +49,12 @@ const ProductDetails = () => {
       title: item.title,
       description: item.description,
       quantity: 1,
-      discountedPrice: item.price.replace(",", ""),
-      mrp: item.origPrice.replace(",", ""),
+      discountedPrice: item.origPrice.replaceAll(",", ""),
+      mrp: item.price.replaceAll(",", ""),
       image: item.img1,
     }
     dispatch(addToCartAction(desiredItem));
+    setItemExists(true);
   }
   // const getSingleProduct=async()=>{
   //   try {
@@ -78,7 +91,9 @@ const ProductDetails = () => {
         <p>{singleItem.description}</p>
         <p>{singleItem.price}</p>
         <p>{singleItem.origPrice}</p>
-        <button onClick={()=>addToCart(singleItem)}>ADD TO BAG</button>
+        {
+          itemExists ? <button onClick={()=>{dispatch(removeItemFromCart(id)); setItemExists(false)}}>REMOVE</button> : <button onClick={()=>addToCart(singleItem)}>ADD TO BAG</button>
+        }
       </div>
     </div>
     <Footer/>

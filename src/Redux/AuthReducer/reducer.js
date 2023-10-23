@@ -41,7 +41,7 @@ class Cart {
     return this.cart.reduce((acc, curr) => acc + curr.quantity, 0);
   }
   get nonPromoDiscountAmount() {
-    let nonPromoAmount =  this.cart.reduce((acc, curr) => acc + (+curr.discountedPrice * curr.quantity), 0);
+    let nonPromoAmount = this.cart.reduce((acc, curr) => acc + (+curr.discountedPrice * curr.quantity), 0);
     return nonPromoAmount;
   }
   get totalMrp() {
@@ -52,10 +52,17 @@ class Cart {
   }
   add(cartItem) {
     try {
+      if (cartItem.id){
+        let exists = this.exists(cartItem.id);
+        if (exists){
+          console.log("item already exists");
+          return;
+        }
+      }
       let keys = Object.keys(cartItem);
       if (keys.includes("id") && keys.includes("title") && keys.includes("description") && keys.includes("quantity") && keys.includes("discountedPrice") && keys.includes("mrp") && keys.includes("image")) {
         this.cart.push(cartItem);
-        console.log("ITEM ADDED TO CART");
+        console.log("ITEM ADDED TO CART", cartItem, this.cart);
       } else {
         throw new Error()
       }
@@ -65,9 +72,9 @@ class Cart {
   }
   remove(id) {
     try {
-      let filteredCartItems = this.cart.filter(c => c.id === id);
+      let filteredCartItems = this.cart.filter(c => c.id === Number(id));
       if (filteredCartItems.length > 0) {
-        this.cart = this.cart.filter(c => c.id !== id);
+        this.cart = this.cart.filter(c => c.id !== Number(id));
       } else {
         throw new Error();
       }
@@ -75,10 +82,18 @@ class Cart {
       throw new Error("No item in the cart exists with this id.");
     }
   }
+  exists(id) {
+    let filteredCartItems = this.cart.filter(c => c.id === id);
+    if (filteredCartItems.length > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   applyPromoCode(code) {
-    if (code.dsc && code.code){
+    if (code.dsc && code.code) {
       let p = this.availableCouponCodes.filter(o => o.code === code.code && o.dsc === code.dsc);
-      if (p.length > 0){
+      if (p.length > 0) {
         this.appliedPromoCodes = code;
       }
       this.promoDiscount = Number(code.dsc);
@@ -90,21 +105,21 @@ class Cart {
 }
 
 const initialState = {
-  cart: new Cart(tempCartItems),
+  cart: new Cart([]),
   cartTotalItems: null,
-  userData:{
-    personal:{
-      firstName:"",
-      lastName:"",
-      email:"",
-      phone:"",
+  userData: {
+    personal: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
     },
-    shippingAddress:{
-      line1:"",
-      line2:"",
-      city:"",
-      state:"",
-      postalCode:"",
+    shippingAddress: {
+      line1: "",
+      line2: "",
+      city: "",
+      state: "",
+      postalCode: "",
 
     }
   },
@@ -185,7 +200,7 @@ export const authReducer = (state = initialState, { type, payload }) => {
     }
     case REMOVE_ITEM_CART: {
       let newCart = new Cart([...state.cart.cart]);
-      newCart.add(payload);
+      newCart.remove(payload);
       return {
         ...state,
         cart: newCart
