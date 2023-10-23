@@ -52,19 +52,35 @@ const getDataSuccess = (payload) => {
   return { type: GET_DATA_SUCCESS, payload: payload };
 };
 
-const getDataError = () => {
-  return { type: GET_DATA_ERROR };
-};
-export const getData = async (dispatch) => {
-  try {
-    dispatch(getDataRequest());
-    const res = await axios.get(baseUrl);
-    // console.log(res.data)
-    dispatch(getDataSuccess(res.data));
-  } catch (error) {
-    dispatch(getDataError());
-  }
-};
+// <<<<<<< HEAD
+// const getDataError = () => {
+//   return { type: GET_DATA_ERROR };
+// };
+// export const getData = async (dispatch) => {
+//   try {
+//     dispatch(getDataRequest());
+//     const res = await axios.get(baseUrl);
+//     // console.log(res.data)
+//     dispatch(getDataSuccess(res.data));
+//   } catch (error) {
+//     dispatch(getDataError());
+//   }
+// };
+// =======
+const getDataError=()=>{
+    return {type:GET_DATA_ERROR}
+}
+export const getData=(currentPage,limit)=>async(dispatch)=>{
+    try {
+        dispatch(getDataRequest())
+        const res=await axios.get(`${baseUrl}?_page=${currentPage}&_limit=${limit}`);
+        // console.log(res.data)
+        dispatch(getDataSuccess(res.data))
+    } catch (error) {
+        dispatch(getDataError())
+    }
+}
+// >>>>>>> f4da83c5bab0f73ce5805c0dd74e315faf34b8ca
 
 export const getSingleProduct = (id) => async (dispatch) => {
   try {

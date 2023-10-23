@@ -45,7 +45,7 @@ const AddressForm = ({ isAddressPresent, setIsAddressPresent }) => {
     return (
         <section style={{ border: "1px solid gray", padding: 10, borderRadius: 5, marginTop: 10 }}>
 
-            <form onSubmit={saveAddress}>
+            <form style={{width: "100%"}} onSubmit={saveAddress}>
                 <div className={css["area"]}>
                     <h3>PERSONAL INFORAMTION</h3>
                     <div className={css["row"]}>

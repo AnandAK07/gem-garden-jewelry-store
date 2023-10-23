@@ -7,8 +7,21 @@ width:% */
     padding: 0;
     font-size: 1rem;
     font-family: 'Nunito Sans', sans-serif;
+    text-decoration: none;
+    color: black;
 }
-
+.pbtns{
+    display: flex;
+    /* justify-content: column; */
+    /* align-content: flex-end; */
+    display: flex;
+}
+.filterBtns{
+    display: flex;
+}
+.filterBtns button{
+    background: #2e2c2d;
+}
 /* @media (min-width:320px)and(max-width:700px) */
 
 @media (min-width:320px){
