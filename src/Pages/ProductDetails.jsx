@@ -20,6 +20,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {getSingleProduct} from '../Redux/ProductsReducer/action'
 import {store} from '../Redux/store'
 import styles from './ProductDetails.module.css'
+import { addToCartAction } from '../Redux/AuthReducer/action';
 
 const ProductDetails = () => {
 
@@ -28,6 +29,20 @@ const ProductDetails = () => {
   const {id}=useParams();
 
   const dispatch=useDispatch();
+
+  const addToCart = (item) => {
+    console.log({item});
+    let desiredItem = {
+      id: item.id,
+      title: item.title,
+      description: item.description,
+      quantity: 1,
+      discountedPrice: item.price.replace(",", ""),
+      mrp: item.origPrice.replace(",", ""),
+      image: item.img1,
+    }
+    dispatch(addToCartAction(desiredItem));
+  }
   // const getSingleProduct=async()=>{
   //   try {
   //     const res=await axios.get(`https://gem-garden-jewelry-store-api.onrender.com/jewelry/${id}`)
@@ -63,7 +78,7 @@ const ProductDetails = () => {
         <p>{singleItem.description}</p>
         <p>{singleItem.price}</p>
         <p>{singleItem.origPrice}</p>
-        <button>ADD TO BAG</button>
+        <button onClick={()=>addToCart(singleItem)}>ADD TO BAG</button>
       </div>
     </div>
     <Footer/>
