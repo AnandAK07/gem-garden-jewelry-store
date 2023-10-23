@@ -2,12 +2,16 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 10;
+    gap: 10px;
 }
 
 .col2{
     flex: 1;
     margin: 10px;
+}
+
+.col2 > input {
+    width: 100%;
 }
 
 .col2 > input {
