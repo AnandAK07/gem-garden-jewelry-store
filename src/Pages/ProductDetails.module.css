@@ -48,6 +48,6 @@
     margin: 1em auto;
     display: flex;
 }
-.details .price p:last-child{
+.details .price :last-child{
     text-decoration: line-through;
 }

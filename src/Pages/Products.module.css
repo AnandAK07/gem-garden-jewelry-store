@@ -46,7 +46,7 @@ p{
     padding-right:1rem;
     margin-top: 0.2rem;
 }
-.price :last-child{
+.pContainer .price :last-child{
     text-decoration: line-through;
 }
 /* Layout */
