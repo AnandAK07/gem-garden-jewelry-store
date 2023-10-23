@@ -3,25 +3,16 @@ import { Link, useNavigate } from "react-router-dom";
 import style from "./nav.module.css";
 import { useSelector } from "react-redux";
 
-
-
-
 // import React, { useState, useEffect } from 'react'
 // import { Link } from 'react-router-dom'
 
-
-
-
-import styles from "./Navbar.module.css"
-
+import styles from "./Navbar.module.css";
 
 const Navbar = () => {
-
-
+  
   const navigate = useNavigate();
   const { isAuth } = useSelector((store) => store.authReducer);
   console.log(isAuth);
-
 
   return (
     <div className={style.navbar}>
@@ -33,21 +24,25 @@ const Navbar = () => {
         />
       </Link>
 
+      <div className={style.menu} >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div  style={{display:"flex",justifyContent:"space-between"}} >
         <div className={style.nav_child1}>
-          <button className={style.btn}>Jwellery</button>
+          <button className={style.btn} onClick={()=>navigate("/products")}>Jwellery</button>
           <button className={style.btn}>Watches</button>
           <button className={style.btn}>Gifts</button>
         </div>
-        <div className={style.nav_child2}>
-          <button className={style.btn} >Contact Us</button>
 
+        <div className={style.nav_child2}>
+          <button className={style.btn}>Contact</button>
 
           <button onClick={() => navigate("/login")} className={style.btn}>
             Account
           </button>
-
 
           <button onClick={() => navigate("/cart")} className={style.btn}>
             Bag
@@ -57,6 +52,5 @@ const Navbar = () => {
     </div>
   );
 };
-
 
 export default Navbar;
