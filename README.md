@@ -6,7 +6,7 @@
 <h4>Md Amir - Navbar</h4>
 
 <h2>Live Demo</h2>
-gem-garden-jewelry-store.vercel.app
+[gem-garden-jewelry-store.vercel.app](https://gem-garden-jewelry-store.vercel.app/)
 
 Anand :-ProductPage
 Api:-https://gem-garden-jewelry-store-api.onrender.com/
