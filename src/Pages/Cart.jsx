@@ -48,7 +48,7 @@ const Cart = () => {
         </div>
       </> : 
       <div style={{display: "flex", justifyContent: "center", alignItems:"center", flexDirection: "column", margin: 20, gap: 20}}>
-        <img src={emptyCartImage} style={{width:"40%"}}/>
+        <img src={emptyCartImage} style={{width:"20%"}}/>
         <h1>No Items in Cart</h1>
         <button onClick={()=>navigate("/")}>Shop</button>
       </div>
