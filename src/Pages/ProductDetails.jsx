@@ -89,8 +89,10 @@ const ProductDetails = () => {
       <div className={styles.details}>
         <h3>{singleItem.title}</h3>
         <p>{singleItem.description}</p>
-        <p>{singleItem.price}</p>
-        <p>{singleItem.origPrice}</p>
+        <div className={styles.price}>
+          <p>{singleItem.price}</p>
+          <p>{singleItem.origPrice}</p>
+        </div>
         {
           itemExists ? <button onClick={()=>{dispatch(removeItemFromCart(id)); setItemExists(false)}}>REMOVE</button> : <button onClick={()=>addToCart(singleItem)}>ADD TO BAG</button>
         }
