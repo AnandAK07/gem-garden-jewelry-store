@@ -57,35 +57,29 @@ const Products = () => {
 
   return (
     <div>
-      <div className={styles.pbtns}>
-        <div className={styles.filterBtns}>
-          <button disabled={currentPage<=1} onClick={()=>setCurrentPage((prev)=>prev-1)}>prev</button>
-          <button>{currentPage}</button>
-          <button onClick={()=>setCurrentPage((prev)=>prev+1)}>next</button>
-        </div>
-        <div className={styles.filterBtns}>
-          <button disabled={currentPage<=1} onClick={()=>setCurrentPage((prev)=>prev-1)}>prev</button>
-          <button>{currentPage}</button>
-          <button onClick={()=>setCurrentPage((prev)=>prev+1)}>next</button>
-        </div>
-      </div>
+      
     <div className={styles.pContainer}>
       
       {items.map((item,id)=>{
         return <Link key={id} to={`/products/${item.id}`} >
                     <div className={styles.child}>
-                    <img src={item.img1} alt="" />
-                    <div className={styles.details}>
-                      <h3 className={styles.space}>{item.title}</h3>
-                      <div className={styles.price}>
-                        <p>₹ {item.price}</p>
-                        <p>₹ {item.origPrice}</p>
-                      </div>
-                      </div>
+                      <img src={item.img1} alt="" />
+                      <div className={styles.details}>
+                        <h3 className={styles.space}>{item.title}</h3>
+                        <div className={styles.price}>
+                          <p>₹ {item.price}</p>
+                          <p>₹ {item.origPrice}</p>
+                        </div>
+                        </div>
                     </div>
                 </Link>
       })}
     </div>
+    <div className={styles.pbtns}>
+          <button disabled={currentPage<=1} onClick={()=>setCurrentPage((prev)=>prev-1)}>prev</button>
+          <button>{currentPage}</button>
+          <button onClick={()=>setCurrentPage((prev)=>prev+1)}>next</button>
+      </div>
     <Footer/>
     </div>
   )
