@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "../Pages/HomePage";
 import Products from "../Pages/Products";
+import ProductDetails from '../Pages/ProductDetails'
 import Login from "../Authentication/Login"
 import SignUp from "../Authentication/SignUp"
 import Cart from "../Pages/Cart";
@@ -38,6 +39,7 @@ const AllRoutes = () => {
       </PrivateRoutes>}>
         <Route path="success" element={<PrivateRoutes><PaymentSuccess /></PrivateRoutes>} />
       </Route>
+      <Route path="/products/:id" element={<ProductDetails/>}/>
     </Routes>
   );
 };
