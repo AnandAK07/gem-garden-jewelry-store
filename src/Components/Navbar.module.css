@@ -6,25 +6,26 @@
     box-sizing: border-box;
 }
 
-.sectionP1 {
+/* .sectionP1 {
     padding: 35px 140px 0px 140px;
     background-color: rgb(41, 36, 33);
     
-}
+} */
 
 .navbar {
-    
+    padding: 25px 140px 25px 140px;
+    background-color: rgb(41, 36, 33);
     color: rgba(235, 235, 235, 0.9);
-    position: relative;
-    color: white;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-family: 'Nunito Sans', sans-serif;
-    position: fixed;
+    position: sticky;
+    top: 0;
     z-index: 999;
-    width: 81%;
+    width: 100%;
+    transition: 1s ease-in-out;
 
 }
 
@@ -52,9 +53,15 @@
 }
 
 
+/* medium screen */
 
-/* .scrollNav{
-   
+
+/* @media screen and (max-width:799px) {
+    
 } */
 
-/* Navbar_scrollNav__Pfsh2 */
+/* @media screen and (max-width: 477px){
+
+} */
+
+/* Medium Screen */

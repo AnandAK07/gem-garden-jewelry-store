@@ -259,7 +259,7 @@
 }
 
 #about .firstDiv>div:nth-child(1) {
-    width: 50%;
+    width: 60%;
     text-align: start;
 }
 
@@ -346,3 +346,83 @@
     font-weight: 500;
     color: rgba(0, 0, 0, 0.968);
 }
+
+@media screen and (max-width:799px) {
+    .sectionP1 {
+        padding: 0 50px;
+    }
+
+    .sectionM1 {
+        margin: 60px 0;
+    }
+
+    .hero div:nth-child(1) {
+        width: 40%;
+    }
+
+    .hero div:nth-child(1) span {
+        padding-top: 25px;
+    }
+
+    .hero div:nth-child(1) h2 {
+        font-size: 35px;
+    }
+
+    #collection .productContainer {
+        margin-top: 40px;
+    }
+
+    #collection .card {
+        margin-top: 15px;
+        display: flex;
+        width: 48%;
+        flex-direction: column;
+        text-align: start;
+    }
+
+    #categories {
+        display: none;
+    }
+
+    #gifts>div:nth-child(2) h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    #gifts>div:nth-child(1) {
+        width: 45%;
+    }
+
+    #gifts>div:nth-child(1) img {
+        left: -100px;
+    }
+
+    #gifts>div:nth-child(2) p {
+        width: 90%;
+    }
+
+    #about .firstDiv>div:nth-child(2) {
+        font-size: 260px;
+    }
+
+    #about .firstDiv>div:nth-child(1) h1 {
+        font-size: 32px;
+        margin-top: 25px;
+    }
+
+    #about .firstDiv>div:nth-child(1) p {
+        width: 95%;
+        font-size: 14px;
+    }
+
+    #about .secondDiv>div:nth-child(2) h1 {
+        font-size: 30px;
+        width: 80%;
+    }
+
+    #about .secondDiv>div:nth-child(2) p {
+        margin-bottom: 40px;
+    }
+
+}
+
