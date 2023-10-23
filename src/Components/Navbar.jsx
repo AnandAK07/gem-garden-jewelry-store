@@ -1,74 +1,62 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import style from "./nav.module.css";
+import { useSelector } from "react-redux";
+
+
+
+
+// import React, { useState, useEffect } from 'react'
+// import { Link } from 'react-router-dom'
+
+
+
 
 import styles from "./Navbar.module.css"
 
+
 const Navbar = () => {
 
-    // const [scrollHeight, setScrollHeight] = useState(0);
 
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //         setScrollHeight(document.documentElement.scrollTop);
-    //         console.log(scrollHeight)
-    //     };
-
-    //     window.addEventListener("scroll", handleScroll);
-
-    //     return () => {
-    //         window.removeEventListener("scroll", handleScroll);
-    //     };
-    // });
-
-    // useEffect(() => {
-    //     if (scrollHeight > 15) {
-    //         const nav = document.querySelector("section>div")
-    //         // nav.classList.remove("Navbar_navbar__pCmRo")
-    //         nav.classList.add("Navbar_scrollNav__Pfsh2")
-            
-    //     } 
-    //     else if(scrollHeight<=15) {
-    //         const nav = document.querySelector("section>div")
-    //         // nav.classList.add("Navbar_navbar__pCmRo")
-    //         nav.classList.remove("Navbar_scrollNav__Pfsh2")
-    //     }
-    // }, [scrollHeight]);
+  const navigate = useNavigate();
+  const { isAuth } = useSelector((store) => store.authReducer);
+  console.log(isAuth);
 
 
-    return (
-        <>
-            <section className={`${styles.sectionP1}`}>
-
-                <div className={`${styles.navbar}` }>
-
-
-                    <div className={styles.leftNav}>
-                        <Link to="/">Jewelry</Link>
-                        <Link to="/">Watches</Link>
-                        <Link to="/">Gifts</Link>
-
-                    </div>
-
-                    <div className={styles.logoNav}>
-                        <Link to="/"><p>GEM GARDEN</p></Link>
-                    </div>
-
-                    <div className={styles.rightNav}>
-                        <Link to="/">Contact Us</Link>
-                        <Link to="/">Account</Link>
-                        <Link to="/cart">Bag</Link>
-
-                    </div>
-
-                </div>
+  return (
+    <div className={style.navbar}>
+      <Link to={"/"}>
+        <img
+          src="https://gem-garden.vercel.app/static/media/GemGardenLogo3.397f01f6d4b951e443aa.png"
+          alt="logo"
+          className={style.logo}
+        />
+      </Link>
 
 
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div className={style.nav_child1}>
+          <button className={style.btn}>Jwellery</button>
+          <button className={style.btn}>Watches</button>
+          <button className={style.btn}>Gifts</button>
+        </div>
+        <div className={style.nav_child2}>
+          <button className={style.btn} >Contact Us</button>
 
-            </section>
+
+          <button onClick={() => navigate("/login")} className={style.btn}>
+            Account
+          </button>
 
 
-        </>
-    )
-}
+          <button onClick={() => navigate("/cart")} className={style.btn}>
+            Bag
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 
 export default Navbar;

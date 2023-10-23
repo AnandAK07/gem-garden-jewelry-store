@@ -67,6 +67,7 @@
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
+    width: 50px;
   }
   .submitButton:disabled {
     background-color: #ccc;
@@ -82,14 +83,14 @@
     text-decoration: none;
   }
   .loginButton:hover{
-    border: none;
-    font-size: medium;
-    font-weight: 600;
-    color: #1d73d5;
-    cursor: pointer;
-    background-color: white;
+    
     text-decoration: underline;
   } 
+  .signupComponent h3{
+    font-size: medium;
+    margin-top: 10px;
+    margin-left: 5rem;
+  }
 
 
 
@@ -99,8 +100,7 @@
 
 
 
-
-  @media (min-width: 350px) and (max-width: 600px) {
+  @media (min-width: 250px) and (max-width: 768px) {
    /* Default Styles */
    .signupComponent{
     background-image: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-taobao-jewelry-fresh-and-simple-gold-jewelry-poster-image_194638.jpg');
@@ -189,17 +189,13 @@ font-weight: bold;
   text-decoration: none;
 }
 .loginButton:hover{
-  border: none;
-  font-size: medium;
-  font-weight: 600;
-  color: #1d73d5;
-  cursor: pointer;
-  background-color: white;
   text-decoration: underline;
 } 
 
 .signupComponent h3{
   font-size: medium;
+  margin-left: 10px;
 }
+
 
   }

@@ -9,14 +9,8 @@ import ThemeContext from "./ThemeContext/ThemeContext";
 function App() {
  const {light} = useContext(ThemeContext)
 
-
-
-
-
   return (
     <div className={light?"light":"dark"}>
-    <h1>Welcome :{<Theme/>} </h1>
-    
       <Navbar />
       <AllRoutes />
       
