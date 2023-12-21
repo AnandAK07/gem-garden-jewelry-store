@@ -49,11 +49,11 @@ npm start
 
 
 # Team Members and Their Works
-```markdown
-- [Dilnawaz] - (Authentication Parts)
+
+- [Akshay Lilani] - (Authentication Parts)
 - [Anand kumar k] - Product Page
-- [Akshay] - Payment Page
-- [Shushil] - HomePage
+- [Md Dilnawaz Alam] - Payment Page
+- [Sushil Kumar Sharma] - HomePage
 - [Md Amir] - Navbar
 
 ```
