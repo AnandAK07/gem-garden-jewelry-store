@@ -50,11 +50,11 @@ npm start
 
 # Team Members and Their Works
 ```markdown
-<h4> Dilnawaz - (Authentication Parts)</h4>
-<h4>Anand kumar - Product Page</h4>
-<h4>Akshay - Payment Page</h4>
-<h4>Shushil - HomePage</h4>
-<h4>Md Amir - Navbar</h4>
+- Dilnawaz - (Authentication Parts)
+- Anand kumar - Product Page
+- Akshay - Payment Page
+- Shushil - HomePage
+- Md Amir - Navbar
 
 ```
 # Live Demo
