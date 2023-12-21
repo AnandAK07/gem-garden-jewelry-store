@@ -56,6 +56,7 @@ npm start
 <h4>Shushil - HomePage</h4>
 <h4>Md Amir - Navbar</h4>
 
+```
 # Live Demo
 ```markdown
 [gem-garden-jewelry-store.vercel.app](https://gem-garden-jewelry-store.vercel.app/)
